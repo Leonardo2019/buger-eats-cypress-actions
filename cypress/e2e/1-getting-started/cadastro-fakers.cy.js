@@ -14,7 +14,7 @@ describe('Cadastro Fakers - Burger Eats',() => {
         cy.get('h1').should('have.text','Seja um parceiro entregador pela Buger Eats')
     })
 
-    it('Validar cadastro fakers - Moto', () => {
+    it('Cadastro fakers - Método Moto', () => {
         cy.MetodoMoto()
 
     })
