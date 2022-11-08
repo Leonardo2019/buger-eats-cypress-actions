@@ -31,8 +31,10 @@ describe('Cadastro Fakers - Burger Eats',() => {
         cy.get('input[name="city-uf"]').should('be.visible')
         cy.contains('Moto').click()
 
-
-
+        cy.get('input[accept^="image"]').attachFile('/Images/' + 'CNH.jpg')
+        cy.get('.button-success').should('be.visible').click()
+        cy.get('.swal2-popup').should('be.visible')
+        cy.get('.swal2-confirm').click()
 
     })
     

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "cypres:run": "cypress run"
+    "cypress:run": "cypress run"
   },
   "keywords": [],
   "author": "Leonardo",
@@ -15,6 +15,7 @@
     "faker-br": "^0.4.1"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.6.0"
+    "@faker-js/faker": "^7.6.0",
+    "cypress-file-upload": "^5.0.8"
   }
 }
