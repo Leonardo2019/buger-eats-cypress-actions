@@ -11,6 +11,10 @@
   "author": "Leonardo",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^10.11.0"
+    "cypress": "^10.11.0",
+    "faker-br": "^0.4.1"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0"
   }
 }
