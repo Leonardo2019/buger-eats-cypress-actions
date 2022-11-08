@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "cypres:run": "cypres run"
+    "cypres:run": "cypress run"
   },
   "keywords": [],
   "author": "Leonardo",
