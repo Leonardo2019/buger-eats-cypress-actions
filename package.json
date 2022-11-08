@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "cypress": "^10.11.0",
+    "cypress-slow-down": "^1.2.1",
     "faker-br": "^0.4.1"
   },
   "devDependencies": {
