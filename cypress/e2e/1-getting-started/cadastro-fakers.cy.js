@@ -109,6 +109,28 @@ describe('Cadastro Fakers - Burger Eats',() => {
         cy.get('input[accept^="image"]').should('be.empty')
         cy.contains('Adicione uma foto da sua CNH').should('be.visible')
 
-    } )
+    })
+
+    it('Validar Placeholder', () => {
+
+        cy.get('strong').should('have.text', 'Cadastre-se para fazer entregas').click()
+        cy.get('input[name="name"]').should('have.attr', 'placeholder', 'Nome completo')
+        cy.get('input[name="cpf"]').should('have.attr', 'placeholder', 'CPF somente números')
+        cy.get('input[name="email"]').should('have.attr', 'placeholder', 'E-mail')
+        cy.get('input[name="whatsapp"]').should('have.attr', 'placeholder', 'Whatsapp')
+        cy.get('input[name="postalcode"]').should('have.attr', 'placeholder', 'CEP')
+        cy.get('[type="button"]').should('have.value', 'Buscar CEP')
+        cy.get('input[name="address"]').should('have.attr', 'placeholder', 'Rua')
+        cy.get('input[name="address-number"]').should('have.attr', 'placeholder', 'Número')
+        cy.get('input[name="address-details"]').should('have.attr', 'placeholder', 'Complemento')
+        cy.get('input[name="district"]').should('have.attr', 'placeholder', 'Bairro')
+        cy.get('input[name="city-uf"]').should('have.attr', 'placeholder', 'Cidade/UF')
+        cy.contains('Moto').should('have.text', 'Moto')
+
+        cy.get('input[accept^="image"]').attachFile('/Images/' + 'CNH.jpg')
+        cy.contains('Foto da sua CNH')
+        cy.get('.button-success').should('have.text', 'Cadastre-se para fazer entregas')
+        
+    })
     
 })
