@@ -130,5 +130,18 @@ describe('Cadastro Fakers - Burger Eats',() => {
         cy.get('.button-success').should('have.text', 'Cadastre-se para fazer entregas')
         
     })
+
+    it('Validar textos - tela cadastro ', () => {
+
+        cy.get('strong').should('have.text', 'Cadastre-se para fazer entregas').click()
+        cy.get('h1').should('have.text', 'Cadastre-se para  fazer entregas')
+        cy.contains('Dados').should('be.visible')
+        cy.contains('Endereço').should('be.visible')
+        cy.contains('Método de entrega').should('be.visible')
+        cy.get('fieldset').parents('form').find('span')
+            .should('contain', 'Informe o cep, número e complemento')
+        
+        
+    })
     
 })
