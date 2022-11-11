@@ -6,6 +6,8 @@ import {faker} from '@faker-js/faker';
 // slowCypressDown(600)
 
 describe('Cadastro Fakers - Burger Eats',() => {
+        var fakers = require('faker-br');
+        let CpfRandom = fakers.br.cpf();
     
     beforeEach(() => {
         cy.visit('https://buger-eats.vercel.app/')
@@ -17,8 +19,8 @@ describe('Cadastro Fakers - Burger Eats',() => {
     })
 
     it('Cadastro fakers - Método Moto', () => {
-        var fakers = require('faker-br');
-        let CpfRandom = fakers.br.cpf();        
+        // var fakers = require('faker-br');
+        // let CpfRandom = fakers.br.cpf();        
 
         cy.get('strong').should('have.text', 'Cadastre-se para fazer entregas').click()
         cy.get('input[name="name"]').type(faker.name.fullName()).should('be.visible')
@@ -43,9 +45,7 @@ describe('Cadastro Fakers - Burger Eats',() => {
     })
 
     it('Entregador método - Bicicleta', () => {
-        var fakers = require('faker-br');
-        let CpfRandom = fakers.br.cpf();        
-
+       
         cy.get('strong').should('have.text', 'Cadastre-se para fazer entregas').click()
         cy.get('input[name="name"]').type(faker.internet.userName())
         cy.get('input[name="cpf"]').type(CpfRandom).should('be.visible')
@@ -67,9 +67,7 @@ describe('Cadastro Fakers - Burger Eats',() => {
     })
 
         it('Entregador método - Van/Carro', () => {
-        var fakers = require('faker-br');
-        let CpfRandom = fakers.br.cpf();        
-
+        
         cy.get('strong').should('have.text', 'Cadastre-se para fazer entregas').click()
         cy.get('input[name="name"]').type(faker.internet.userName())
         cy.get('input[name="cpf"]').type(CpfRandom).should('be.visible')
