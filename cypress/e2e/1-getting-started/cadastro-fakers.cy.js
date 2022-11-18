@@ -141,7 +141,11 @@ describe('Cadastro Fakers - Burger Eats',() => {
         cy.get('fieldset').parents('form').find('span')
             .should('contain', 'Informe o cep, número e complemento')
         
-        
+    })
+
+    it('Teste alterar texto - Invoke', () => {
+        cy.get('h1').invoke('text', 'Texto de teste')
+        cy.get('strong').invoke('text', 'Digitar novo texto')
     })
     
 })
