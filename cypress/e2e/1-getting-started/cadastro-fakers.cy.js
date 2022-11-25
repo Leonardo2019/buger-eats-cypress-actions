@@ -147,5 +147,32 @@ describe('Cadastro Fakers - Burger Eats',() => {
         cy.get('h1').invoke('text', 'Texto de teste')
         cy.get('strong').invoke('text', 'Digitar novo texto')
     })
+
+    it('Cadastro fakers - Método Van/Carro', () => {
+       
+        cy.get('strong').should('have.text', 'Cadastre-se para fazer entregas').click()
+        cy.get('input[name="name"]').type(faker.name.fullName()).should('be.visible')
+        cy.get('input[name="cpf"]').type(CpfRandom).should('be.visible')
+        cy.get('input[name="email"]').type(faker.internet.email()).should('be.visible')
+        cy.get('input[name="whatsapp"]').type(faker.phone.number('9########'))
+        cy.get('input[name="postalcode"]').type('02235000').should('be.visible')
+        cy.get('input[type="button"]').click().should('be.visible')
+        cy.get('input[name="address"]').should('be.visible')
+        cy.get('input[name="address-number"]').type(faker.phone.number('###'))
+        cy.get('input[name="address-details"]').type(faker.vehicle.vehicle())
+        cy.get('input[name="district"]').should('be.visible')
+        cy.get('input[name="city-uf"]').should('be.visible')
+
+        cy.get('fieldset ul li').eq(2).should('have.text', 'Van/Carro').click()
+        // cy.contains('Moto').click()
+        
+        cy.get('input[accept^="image"]').selectFile('cypress/fixtures/Images/CNH.jpg', {force:true})
+
+        cy.get('.button-success').should('be.visible').click()
+        cy.get('.swal2-popup').should('be.visible')
+        cy.get('.swal2-confirm').click()
+    
+        
+    })
     
 })
